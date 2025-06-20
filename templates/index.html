@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Moedas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Conversor de Moedas</h1>
+
+        <div class="cotacao-info">
+            <p>Cotação Dólar Comercial (USD/BRL): <span id="cotacao-dolar">-</span></p>
+            <p class="ultima-atualizacao">Última atualização: <span id="ultima-atualizacao">-</span></p>
+        </div>
+
+        <div class="conversor-box">
+            <div class="input-group">
+                <label for="valor">Valor (BRL):</label>
+                <input type="number" id="valor" value="1" min="0.01" step="0.01">
+            </div>
+            <div class="input-group">
+                <label for="moeda-destino">Converter para:</label>
+                <select id="moeda-destino">
+                    <option value="USD">Dólar Americano (USD)</option>
+                    </select>
+            </div>
+            <button id="btn-converter">Converter</button>
+            <div class="resultado">
+                <p>Resultado: <span id="resultado-conversao">-</span></p>
+            </div>
+        </div>
+
+        <p id="mensagem-erro" class="mensagem-erro"></p>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
